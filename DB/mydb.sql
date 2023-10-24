@@ -14,23 +14,30 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- Volcando estructura para tabla proyecto-laravel.produccion
-CREATE TABLE IF NOT EXISTS `produccion` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `apellido` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `pais` varchar(255) DEFAULT NULL,
-  `foto` text,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
+-- Volcando estructura para tabla mydb.categorias
+CREATE TABLE IF NOT EXISTS `categorias` (
+  `id` int NOT NULL,
+  `nombre` varchar(100) DEFAULT NULL,
+  `estado` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Volcando datos para la tabla proyecto-laravel.produccion: ~3 rows (aproximadamente)
-REPLACE INTO `produccion` (`id`, `nombre`, `apellido`, `pais`, `foto`, `created_at`, `updated_at`) VALUES
-	(6, 'aaa', 'aaa', 'aaae', '/fotos/', '2023-10-24 01:47:36', '2023-10-24 02:32:41'),
-	(7, 'prueba', 'pruebita', 'colombia', '/fotos/', '2023-10-24 01:57:59', '2023-10-24 01:57:59'),
-	(8, 'pepito', 'perez', 'peru', '/fotos/', '2023-10-24 02:32:32', '2023-10-24 02:32:32');
+-- Volcando datos para la tabla mydb.categorias: ~0 rows (aproximadamente)
+REPLACE INTO `categorias` (`id`, `nombre`, `estado`) VALUES
+	(1, 'prueba', 1);
+
+-- Volcando estructura para tabla mydb.productos
+CREATE TABLE IF NOT EXISTS `productos` (
+  `id` int NOT NULL,
+  `nombre` varchar(100) DEFAULT NULL,
+  `precio` int DEFAULT NULL,
+  `categoria` varchar(100) DEFAULT NULL,
+  `estado` tinyint(1) DEFAULT NULL,
+  `cantidad` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Volcando datos para la tabla mydb.productos: ~0 rows (aproximadamente)
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
